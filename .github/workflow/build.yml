@@ -1,0 +1,13 @@
+name: build
+on: push
+jobs:
+  compile:
+    name: build Usenix paper
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up a git repo
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+          with:
+            root_file: main.tex
